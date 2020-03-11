@@ -1,0 +1,8 @@
+clear
+load ..\mat\puv_proc_FI_iwaves2 raw depth fs zr zp dn
+%load('..\mat\puv_proc_FI_iwaves_depc.mat')
+for ii=1:length(depth)
+b(ii).wf=findurwaveform(UBS(ii).ur',fs,dn(ii))
+end
+
+save mat\9917adv_waveforms b

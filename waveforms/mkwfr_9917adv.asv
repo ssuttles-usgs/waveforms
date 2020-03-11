@@ -1,0 +1,15 @@
+clear
+load('mat\9917adv_waveforms')
+for ii=1:length(b)
+    
+    if rem(ii,10)==0
+        disp(ii)
+    end
+    wf=b(ii).wf;
+    wfr(ii)=findwfr(wf);
+    wf7(ii)=findwf7(wfr(ii));
+        
+end
+
+wfr.wf7=wf7;
+save mat\9917adv_wfr wfr
